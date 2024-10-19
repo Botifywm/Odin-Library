@@ -1,90 +1,116 @@
 html {
-    background-color: beige;
-    height: 100vh;
-    font-size: 1rem;
+  background-color: beige;
+  height: 100vh;
+  font-size: 1rem;
 }
 
 #heading {
-    text-align: center;
-    letter-spacing: 2px;
-    color: brown;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  letter-spacing: 2px;
+  color: brown;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 .addBookBtn {
-    text-align: center;
-    margin-top: 32px;
+  text-align: center;
+  margin-top: 32px;
 }
 
 table {
-    border-collapse: collapse;
-    border: 2px solid rgb(200,200,200);
-    letter-spacing: 1px;
-    /* font-size: 1rem; */
-    margin: auto;
+  border-collapse: collapse;
+  border: 2px solid rgb(200, 200, 200);
+  letter-spacing: 1px;
+  /* font-size: 1rem; */
+  margin: auto;
 }
 
-td, th {
-    border: 1px solid rgb(190,190,190);
-    padding: 10px 20px;
+td,
+th {
+  border: 1px solid rgb(190, 190, 190);
+  padding: 10px 20px;
 }
 
 th {
-    background-color: rgb(235,235,235);
+  background-color: rgb(235, 235, 235);
 }
 
-  td {
-    text-align: center;
-  }
+td {
+  text-align: center;
+}
 
 tr:nth-child(even) td {
-    background-color: rgb(250,250,250);
+  background-color: rgb(250, 250, 250);
 }
 
 tr:nth-child(odd) td {
-    background-color: rgb(245,245,245);
+  background-color: rgb(245, 245, 245);
 }
 
 ::backdrop {
-    background-color: black;
-    opacity: 0.5;
-  }
+  background-color: black;
+  opacity: 0.5;
+}
 
 dialog {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
 dialog label {
-    display: inline-block;
-    width: 50px;
+  display: inline-block;
+  width: 50px;
 }
 
-dialog input, select {
-    margin: 8px;
-    border-radius: 5px;
-    padding: 0px 8px;
+dialog input,
+select {
+  margin: 8px;
+  border-radius: 5px;
+  padding: 0px 8px;
 }
 
 .status {
-    text-align: left;
+  text-align: left;
 }
 
 .dialog-btn {
-    margin-top: 16px;
-    display: flex;
-    justify-content: space-between;
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .statusToggle {
-    background-color: black;
-    margin-left: 8px;
-    font-size: 0.7rem;
-    border-radius: 5px;
-    color: antiquewhite;
+  background-color: black;
+  margin-left: 8px;
+  font-size: 0.7rem;
+  border-radius: 5px;
+  color: antiquewhite;
 }
 
 svg {
-    display: grid;
-    width: 2rem;
-    margin: auto;
+  display: grid;
+  width: 2rem;
+  margin: auto;
+}
+
+#title:valid {
+  border: 2px solid green;
+}
+
+#title:invalid {
+  border: 2px solid red;
+}
+
+#author:valid {
+  border: 2px solid green;
+}
+
+#author:invalid {
+  border: 2px solid red;
+}
+
+#pages:valid {
+  border: 2px solid green;
+}
+
+#pages:invalid {
+  border: 2px solid red;
 }

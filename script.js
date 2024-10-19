@@ -4,7 +4,7 @@ const tbody = document.querySelector("tbody");
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("dialog + button");
 const closeButton = document.querySelector("dialog button");
-const confrimBtn = dialog.querySelector("#confrimBtn");
+const addForm = dialog.querySelector(".addForm");
 
 // Form inputs
 const ftitle = document.querySelector("#title");
@@ -42,6 +42,8 @@ function displayLibrary() {
   // before looping, we want to empty the table body so it does not
   // keep the rows from the previous execution of this function - which will
   // create duplicates
+  addForm.reset();
+
   const allrows = document.querySelectorAll("tbody tr");
   allrows.forEach((rows) => {
     rows.remove();
@@ -98,10 +100,38 @@ closeButton.addEventListener("click", () => {
   dialog.close();
 });
 
-confrimBtn.addEventListener("click", (event) => {
+addForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  let book = new Book(ftitle.value, fauthor.value, fpages.value, fstatus.value);
-  myLibrary.push(book);
-  dialog.close();
-  displayLibrary();
+
+  ftitle.setCustomValidity("");
+  fauthor.setCustomValidity("");
+  fpages.setCustomValidity("");
+
+  let validity = true;
+
+  if (!ftitle.checkValidity()) {
+    ftitle.setCustomValidity("Cannot be empty!");
+    ftitle.reportValidity();
+    validity = false;
+  } else if (!fauthor.checkValidity()) {
+    fauthor.setCustomValidity("Cannot be empty!");
+    fauthor.reportValidity();
+    validity = false;
+  } else if (!fpages.checkValidity()) {
+    fpages.setCustomValidity("Cannot be empty!");
+    fpages.reportValidity();
+    validity = false;
+  }
+
+  if (validity === true) {
+    let book = new Book(
+      ftitle.value,
+      fauthor.value,
+      fpages.value,
+      fstatus.value
+    );
+    myLibrary.push(book);
+    dialog.close();
+    displayLibrary();
+  }
 });
